@@ -4,15 +4,15 @@ var Slider = /** @class */ (function () {
     var SLIDE_ID_PREFIX = "slide" + SLIDE_ID_SEPARATOR;
 
     function Slider() {
-        var sliderContainer = document.getElementsByClassName('slider-container').item(0);
+        var sliderContainer = document.getElementsByClassName('ngw-slider-container').item(0);
 
         this.init(sliderContainer);
         this.setupListeners();
     }
 
     Slider.prototype.init = function (sliderContainer) {
-        this.sliderNavigatorContainer = sliderContainer.getElementsByClassName('slider-navigator-container').item(0);
-        this.slidesContainer = sliderContainer.getElementsByClassName('slides-container').item(0);
+        this.sliderNavigatorContainer = sliderContainer.getElementsByClassName('ngw-slider-navigator-container').item(0);
+        this.slidesContainer = sliderContainer.getElementsByClassName('ngw-slides-container').item(0);
         this.sliderNavigators = this.sliderNavigatorContainer.getElementsByTagName('a');
         this.currentSlideId = this.sliderNavigators.length > 0 ? this.sliderNavigators.item(0).hash : '';
         this.cycleNavigation = false;
@@ -20,7 +20,7 @@ var Slider = /** @class */ (function () {
 
     Slider.prototype.setupListeners = function () {
         this.sliderNavigatorContainer
-            .querySelectorAll('.next, .previous')
+            .querySelectorAll('.ngw-slider-next, .ngw-slider-previous')
             .forEach(paginator => {
                 paginator.addEventListener('click', this.paginationClick.bind(this));
             });
@@ -41,9 +41,9 @@ var Slider = /** @class */ (function () {
 
         var paginationButton = event.target;
         
-        if (paginationButton.classList.contains('next')) {
+        if (paginationButton.classList.contains('ngw-slider-next')) {
             this.next();
-        } else if (paginationButton.classList.contains('previous')) {
+        } else if (paginationButton.classList.contains('ngw-slider-previous')) {
             this.previous();
         } else {
             throw new Error('The target element is not pagination button to perform this action.')
@@ -53,17 +53,17 @@ var Slider = /** @class */ (function () {
     Slider.prototype.enableCycleNavigation = function () {
         this.cycleNavigation = true;
 
-        this.visibleAndEnablePaginator('next');
-        this.visibleAndEnablePaginator('previous');
+        this.visibleAndEnablePaginator('ngw-slider-next');
+        this.visibleAndEnablePaginator('ngw-slider-previous');
     }
 
     Slider.prototype.disableCycleNavigation = function () {
         this.cycleNavigation = false;
 
         if(this.currentSlideIsFirst()) {
-            this.hideAndDisablePaginator('previous');
+            this.hideAndDisablePaginator('ngw-slider-previous');
         } else if (this.currentSlideIsLast()) {
-            this.hideAndDisablePaginator('next');
+            this.hideAndDisablePaginator('ngw-slider-next');
         }
     }
 
@@ -131,9 +131,9 @@ var Slider = /** @class */ (function () {
         this.activateSlide(this.currentSlideId, sliderNavigator);
 
         if (!this.cycleNavigation && this.currentSlideIsLast()) {
-            this.hideAndDisablePaginator('next');
+            this.hideAndDisablePaginator('ngw-slider-next');
         } else if (!this.cycleNavigation) {
-            this.visibleAndEnablePaginator('previous');
+            this.visibleAndEnablePaginator('ngw-slider-previous');
         }
     }
 
@@ -148,9 +148,9 @@ var Slider = /** @class */ (function () {
         this.activateSlide(this.currentSlideId, sliderNavigator);
 
         if(!this.cycleNavigation && this.currentSlideIsFirst()) {
-            this.hideAndDisablePaginator('previous');
+            this.hideAndDisablePaginator('ngw-slider-previous');
         } else if (!this.cycleNavigation) {
-            this.visibleAndEnablePaginator('next');
+            this.visibleAndEnablePaginator('ngw-slider-next');
         }
     }
 
@@ -214,23 +214,4 @@ var Slider = /** @class */ (function () {
     }
     
     return Slider;
-}());
-
-var Program = /** @class */ (function () {
-    function Program() {
-        this.slider = null;
-    }
-
-    Program.prototype.run = function () {
-        this.slider = new Slider();
-        this.slider.hideNavigators();
-        this.slider.disableCycleNavigation();
-    }
-
-    return Program;
-}());
-
-(function () {
-    var program = new Program();
-    program.run();
 }());

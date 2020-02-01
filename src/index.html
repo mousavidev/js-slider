@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="slider.css" rel="stylesheet">
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ngw-slider-container {
+            width: 350px;
+        }
+
+        .flex-spacer {
+            flex: 1 1 auto;
+        }
+    </style>
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="ngw-slider-container">
+            
+            <nav class="ngw-slider-navigator-container">
+                <a href="#slide-1" class="ngw-active"></a>
+                <a href="#slide-2"></a>
+                <a href="#slide-3"></a>
+                <a href="#slide-4"></a>
+                <span class="flex-spacer"></span>
+                <button class="ngw-slider-paginator ngw-slider-previous">Previous</button>
+                <button class="ngw-slider-paginator ngw-slider-next">Next</button>
+            </nav>
+            
+            <div class="ngw-slides-container">
+                
+                <div class="ngw-slide ngw-active" id="slide-1">
+                    <div class="ngw-slide-header">Slide 1</div>
+                    <div class="ngw-slide-content">Slide 1 Content</div>
+                    <div class="ngw-slide-footer">Slide 1 Footer</div>
+                </div>
+                <div class="ngw-slide" id="slide-2">
+                    <div class="ngw-slide-header">Slide 2</div>
+                    <div class="ngw-slide-content">Slide 2 Content</div>
+                    <div class="ngw-slide-footer">Slide 2 Footer</div>
+                </div>
+                <div class="ngw-slide" id="slide-3">
+                    <div class="ngw-slide-header">Slide 3</div>
+                    <div class="ngw-slide-content">Slide 3 Content</div>
+                    <div class="ngw-slide-footer">Slide 3 Footer</div>
+                </div>
+                <div class="ngw-slide" id="slide-4">
+                    <div class="ngw-slide-header">Slide 4</div>
+                    <div class="ngw-slide-content">Slide 4 Content</div>
+                    <div class="ngw-slide-footer">Slide 4 Footer</div>
+                </div>
+    
+            </div>
+    
+        </div>
+    </div>
+
+    <script src="slider.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

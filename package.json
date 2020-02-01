@@ -4,7 +4,8 @@
   "description": "Pure javascript slider for oop practicing.",
   "main": "slider.js",
   "scripts": {
-    "test": "npm test"
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,13 @@
     "url": "https://github.com/mousavidev/js-slider/issues"
   },
   "homepage": "https://github.com/mousavidev/js-slider#readme",
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "devDependencies": {
+    "css-loader": "^3.4.2",
+    "style-loader": "^1.1.3",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
 }
