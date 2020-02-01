@@ -1,0 +1,26 @@
+{
+  "name": "js-slider",
+  "version": "1.0.0",
+  "description": "Pure javascript slider for oop practicing.",
+  "main": "slider.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mousavidev/js-slider.git"
+  },
+  "keywords": [
+    "slider",
+    "js-slider",
+    "js",
+    "oop",
+    "practice"
+  ],
+  "author": "mousavi.dev@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mousavidev/js-slider/issues"
+  },
+  "homepage": "https://github.com/mousavidev/js-slider#readme"
+}
