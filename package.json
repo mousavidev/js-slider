@@ -22,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/mousavidev/js-slider/issues"
   },
-  "homepage": "https://github.com/mousavidev/js-slider#readme"
+  "homepage": "https://github.com/mousavidev/js-slider#readme",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
 }
